@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mappa al Tesoro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1a1008;
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(80,40,10,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(60,30,5,0.3) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      font-family: 'IM Fell English', serif;
+      color: #c8a96e;
+      overflow: hidden;
+    }
+
+    .card {
+      text-align: center;
+      padding: 3rem 3.5rem;
+      max-width: 520px;
+      width: 90%;
+      position: relative;
+      border: 1px solid rgba(200,169,110,0.25);
+      background: rgba(20,10,3,0.7);
+      backdrop-filter: blur(4px);
+      animation: fadeIn 1.2s ease both;
+    }
+
+    .card::before, .card::after {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(200,169,110,0.1);
+      pointer-events: none;
+    }
+    .card::after { inset: 12px; border-color: rgba(200,169,110,0.05); }
+
+    .skull {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 1.5rem;
+      animation: shake 0.6s ease 1s both;
+      filter: drop-shadow(0 0 12px rgba(200,100,50,0.5));
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: #e8c87a;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px rgba(220,160,60,0.4);
+    }
+
+    p {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #a07848;
+      line-height: 1.7;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c8a96e, transparent);
+      margin: 1.5rem auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes shake {
+      0%,100% { transform: rotate(0deg); }
+      20%      { transform: rotate(-12deg); }
+      40%      { transform: rotate(12deg); }
+      60%      { transform: rotate(-8deg); }
+      80%      { transform: rotate(8deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="skull">💀</span>
+    <h1>Hai sbagliato</h1>
+    <div class="divider"></div>
+    <p>Questo non è il luogo che cerchi.<br>Guarda ancora la mappa... e riprova.</p>
+  </div>
+</body>
+</html>
